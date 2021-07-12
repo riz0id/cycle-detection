@@ -1,0 +1,53 @@
+cabal-version:       >=1.10
+
+name:                trees
+version:             0.1.0.0
+-- synopsis:
+-- description:
+-- bug-reports:
+-- license:
+license-file:        LICENSE
+author:              Jake
+maintainer:          jacobleach@protonmail.com
+-- copyright:
+-- category:
+build-type:          Simple
+extra-source-files:  CHANGELOG.md
+
+library
+  default-language:    Haskell2010
+  hs-source-dirs:      src
+
+  build-depends:
+      adjunctions
+    , base >=4.14 && <4.15
+    , containers
+    , distributive
+    , mmorph
+    , mtl
+
+  exposed-modules:
+      Control.Applicative.Day
+    , Control.Applicative.Free
+    , Control.Applicative.Queue
+    , Control.Monad.Hyper
+    , Control.Monad.List
+    , Data.Graph
+    , Data.Path
+    , Data.Tree
+    , Data.Tree.Show
+
+test-suite unit-tests
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Main.hs
+
+  build-depends:
+      base >=4.14 && <4.15
+    , containers
+    , distributive
+    , mmorph
+    , mtl
+
+  build-depends:
+      trees
